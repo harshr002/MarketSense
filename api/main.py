@@ -2,12 +2,27 @@ import os
 import json
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+
+from agent.market_reasoner import generate_market_explanation
 
 
 app = FastAPI(
     title="MarketSense API",
     version="1.0.0"
+)
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
@@ -20,19 +35,15 @@ class UserQuestion(BaseModel):
 
 def load_latest_gold_summary():
     files = [
-        f for f in os.listdir(
-            GOLD_DIR
-        )
-        if f.endswith(
-            ".json"
-        )
+        file
+        for file in os.listdir(GOLD_DIR)
+        if file.endswith(".json")
     ]
 
     if not files:
         return None
 
     files.sort()
-
     latest_file = files[-1]
 
     path = os.path.join(
@@ -40,21 +51,14 @@ def load_latest_gold_summary():
         latest_file
     )
 
-    with open(
-        path,
-        "r"
-    ) as file:
-
-        data = json.load(
-            file
-        )
+    with open(path, "r") as file:
+        data = json.load(file)
 
     return data
 
 
 @app.get("/health")
 def health_check():
-
     return {
         "status": "healthy",
         "service": "MarketSense API"
@@ -63,7 +67,6 @@ def health_check():
 
 @app.get("/summary")
 def get_market_summary():
-
     data = load_latest_gold_summary()
 
     if not data:
@@ -75,10 +78,7 @@ def get_market_summary():
 
 
 @app.post("/ask")
-def ask_market(
-    user_input: UserQuestion
-):
-
+def ask_market(user_input: UserQuestion):
     data = load_latest_gold_summary()
 
     if not data:
@@ -86,29 +86,12 @@ def ask_market(
             "error": "No market intelligence available."
         }
 
-    summary = data[
-        "summary"
-    ]
+    summary = data["summary"]
 
-    market_sentiment = summary[
-        "market_sentiment"
-    ]
-
-    avg_score = summary[
-        "average_sentiment_score"
-    ]
-
-    answer = (
-        f"Current market sentiment is "
-        f"{market_sentiment}. "
-        f"Average sentiment score is "
-        f"{avg_score}."
-    )
+    answer = generate_market_explanation(summary)
 
     return {
-        "question":
-            user_input.question,
-
-        "answer":
-            answer
+        "question": user_input.question,
+        "answer": answer,
+        "source": "gold_layer_market_intelligence"
     }
