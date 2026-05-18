@@ -50,6 +50,7 @@ sgmllib3k==1.0.0
 shellingham==1.5.4
 six==1.17.0
 soupsieve==2.8.3
+SQLAlchemy==2.0.49
 starlette==1.0.0
 sympy==1.14.0
 threadpoolctl==3.6.0
