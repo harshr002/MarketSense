@@ -1,0 +1,13 @@
+{
+  "layer": "gold",
+  "generated_at": "2026-05-18T15:52:14.746462+00:00",
+  "summary": {
+    "total_articles": 0,
+    "positive_articles": 0,
+    "negative_articles": 0,
+    "neutral_articles": 0,
+    "average_sentiment_score": 0,
+    "market_sentiment": "neutral",
+    "top_sources": []
+  }
+}
