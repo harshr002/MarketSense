@@ -88,7 +88,7 @@ def ask_market(user_input: UserQuestion):
 
     summary = data["summary"]
 
-    answer = generate_market_explanation(summary)
+    answer = generate_market_explanation(summary, user_input.question)
 
     return {
         "question": user_input.question,
