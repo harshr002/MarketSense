@@ -1,0 +1,65 @@
+[
+  {
+    "ticker": "AAPL",
+    "open": null,
+    "high": null,
+    "low": null,
+    "close": null,
+    "volume": null,
+    "fetched_at": "2026-05-18T15:13:42.499002+00:00"
+  },
+  {
+    "ticker": "MSFT",
+    "open": null,
+    "high": null,
+    "low": null,
+    "close": null,
+    "volume": null,
+    "fetched_at": "2026-05-18T15:13:43.430909+00:00"
+  },
+  {
+    "ticker": "GOOGL",
+    "open": null,
+    "high": null,
+    "low": null,
+    "close": null,
+    "volume": null,
+    "fetched_at": "2026-05-18T15:13:43.827951+00:00"
+  },
+  {
+    "ticker": "AMZN",
+    "open": null,
+    "high": null,
+    "low": null,
+    "close": null,
+    "volume": null,
+    "fetched_at": "2026-05-18T15:13:44.217827+00:00"
+  },
+  {
+    "ticker": "TSLA",
+    "open": null,
+    "high": null,
+    "low": null,
+    "close": null,
+    "volume": null,
+    "fetched_at": "2026-05-18T15:13:44.656344+00:00"
+  },
+  {
+    "ticker": "NVDA",
+    "open": null,
+    "high": null,
+    "low": null,
+    "close": null,
+    "volume": null,
+    "fetched_at": "2026-05-18T15:13:45.039873+00:00"
+  },
+  {
+    "ticker": "META",
+    "open": null,
+    "high": null,
+    "low": null,
+    "close": null,
+    "volume": null,
+    "fetched_at": "2026-05-18T15:13:45.387736+00:00"
+  }
+]
