@@ -1,0 +1,10 @@
+services:
+  marketsense-api:
+    build: .
+    container_name: marketsense-api
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///marketsense.db
+    volumes:
+      - .:/app

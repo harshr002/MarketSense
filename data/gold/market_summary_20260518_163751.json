@@ -1,0 +1,34 @@
+{
+  "layer": "gold",
+  "generated_at": "2026-05-18T16:37:51.135703+00:00",
+  "summary": {
+    "total_articles": 35,
+    "positive_articles": 14,
+    "negative_articles": 11,
+    "neutral_articles": 10,
+    "average_sentiment_score": 0.0453,
+    "market_sentiment": "neutral",
+    "top_sources": [
+      {
+        "source": "Yahoo Finance",
+        "count": 6
+      },
+      {
+        "source": "Zacks",
+        "count": 4
+      },
+      {
+        "source": "Motley Fool",
+        "count": 4
+      },
+      {
+        "source": "Insider Monkey",
+        "count": 3
+      },
+      {
+        "source": "Investor's Business Daily",
+        "count": 3
+      }
+    ]
+  }
+}
