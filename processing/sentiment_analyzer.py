@@ -1,30 +1,36 @@
-from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+from transformers import pipeline
 
 
-analyzer = SentimentIntensityAnalyzer()
+finbert = pipeline(
+    "sentiment-analysis",
+    model="ProsusAI/finbert"
+)
 
 
 def analyze_sentiment(text):
     """
-    Returns sentiment score + label.
+    Financial sentiment analysis using FinBERT.
     """
 
-    scores = analyzer.polarity_scores(
-        text
-    )
+    if not text:
+        return {
+            "sentiment_label": "neutral",
+            "sentiment_score": 0.0
+        }
 
-    compound = scores["compound"]
+    result = finbert(text[:512])[0]
 
-    if compound >= 0.05:
-        label = "positive"
+    label = result["label"].lower()
+    score = float(result["score"])
 
-    elif compound <= -0.05:
-        label = "negative"
-
+    if label == "positive":
+        compound = score
+    elif label == "negative":
+        compound = -score
     else:
-        label = "neutral"
+        compound = 0.0
 
     return {
         "sentiment_label": label,
-        "sentiment_score": compound
+        "sentiment_score": round(compound, 4)
     }
