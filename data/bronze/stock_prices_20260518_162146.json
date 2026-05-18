@@ -1,0 +1,93 @@
+[
+  {
+    "ticker": "AAPL",
+    "open": null,
+    "high": null,
+    "low": null,
+    "close": null,
+    "volume": null,
+    "fetched_at": "2026-05-18T16:21:47.469574+00:00",
+    "record_id": "65b83e61-0719-400f-8fed-7215764c9cef",
+    "layer": "bronze",
+    "source_type": "market_prices",
+    "pipeline_timestamp": "2026-05-18T16:21:51.309042+00:00"
+  },
+  {
+    "ticker": "MSFT",
+    "open": null,
+    "high": null,
+    "low": null,
+    "close": null,
+    "volume": null,
+    "fetched_at": "2026-05-18T16:21:47.732860+00:00",
+    "record_id": "02fe322b-e09d-4fba-92da-402aaa354ab7",
+    "layer": "bronze",
+    "source_type": "market_prices",
+    "pipeline_timestamp": "2026-05-18T16:21:51.309059+00:00"
+  },
+  {
+    "ticker": "GOOGL",
+    "open": null,
+    "high": null,
+    "low": null,
+    "close": null,
+    "volume": null,
+    "fetched_at": "2026-05-18T16:21:48.061384+00:00",
+    "record_id": "3b17b8ec-cb88-4366-bf1f-e4dcc62eea50",
+    "layer": "bronze",
+    "source_type": "market_prices",
+    "pipeline_timestamp": "2026-05-18T16:21:51.309066+00:00"
+  },
+  {
+    "ticker": "AMZN",
+    "open": null,
+    "high": null,
+    "low": null,
+    "close": null,
+    "volume": null,
+    "fetched_at": "2026-05-18T16:21:48.385891+00:00",
+    "record_id": "3b30d337-f39c-40eb-8d2e-d87d44a2450e",
+    "layer": "bronze",
+    "source_type": "market_prices",
+    "pipeline_timestamp": "2026-05-18T16:21:51.309072+00:00"
+  },
+  {
+    "ticker": "TSLA",
+    "open": null,
+    "high": null,
+    "low": null,
+    "close": null,
+    "volume": null,
+    "fetched_at": "2026-05-18T16:21:48.723469+00:00",
+    "record_id": "b717b0ed-eaa7-481c-9e54-9b61b8eee638",
+    "layer": "bronze",
+    "source_type": "market_prices",
+    "pipeline_timestamp": "2026-05-18T16:21:51.309079+00:00"
+  },
+  {
+    "ticker": "NVDA",
+    "open": null,
+    "high": null,
+    "low": null,
+    "close": null,
+    "volume": null,
+    "fetched_at": "2026-05-18T16:21:49.034139+00:00",
+    "record_id": "f59261ea-1e18-4f5c-9fe9-20846e4274de",
+    "layer": "bronze",
+    "source_type": "market_prices",
+    "pipeline_timestamp": "2026-05-18T16:21:51.309084+00:00"
+  },
+  {
+    "ticker": "META",
+    "open": null,
+    "high": null,
+    "low": null,
+    "close": null,
+    "volume": null,
+    "fetched_at": "2026-05-18T16:21:49.363424+00:00",
+    "record_id": "3a9ec55e-8b18-4287-b0d0-1aeeb7f907e2",
+    "layer": "bronze",
+    "source_type": "market_prices",
+    "pipeline_timestamp": "2026-05-18T16:21:51.309089+00:00"
+  }
+]

@@ -1,28 +1,46 @@
-import feedparser
 from datetime import datetime, timezone
+import yfinance as yf
 
 
-RSS_FEEDS = {
-    "Yahoo Finance": "https://finance.yahoo.com/news/rssindex",
-    "CNBC Markets": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
-    "MarketWatch": "https://feeds.content.dowjones.io/public/rss/mw_topstories"
-}
+TICKERS = ["AAPL", "MSFT", "NVDA", "TSLA", "GOOGL", "AMZN", "META"]
 
 
 def fetch_financial_news():
     news_records = []
 
-    for source, url in RSS_FEEDS.items():
-        feed = feedparser.parse(url)
+    for ticker in TICKERS:
+        try:
+            stock = yf.Ticker(ticker)
+            news_items = stock.news or []
 
-        for entry in feed.entries[:10]:
-            news_records.append({
-                "source": source,
-                "title": entry.get("title", ""),
-                "summary": entry.get("summary", ""),
-                "link": entry.get("link", ""),
-                "published_at": entry.get("published", ""),
-                "fetched_at": datetime.now(timezone.utc).isoformat()
-            })
+            print(f"{ticker}: {len(news_items)} news items")
+
+            for item in news_items[:5]:
+                content = item.get("content", item)
+
+                title = content.get("title", "")
+                summary = content.get("summary", "")
+                link = content.get("canonicalUrl", {}).get("url", "")
+
+                provider = content.get("provider", {})
+                source = provider.get("displayName", "Yahoo Finance")
+
+                published_at = content.get("pubDate", "")
+
+                if title:
+                    news_records.append({
+                        "ticker": ticker,
+                        "source": source,
+                        "title": title,
+                        "summary": summary,
+                        "link": link,
+                        "published_at": published_at,
+                        "fetched_at": datetime.now(timezone.utc).isoformat()
+                    })
+
+        except Exception as error:
+            print(f"Error fetching news for {ticker}: {error}")
+
+    print(f"Total fetched news: {len(news_records)}")
 
     return news_records

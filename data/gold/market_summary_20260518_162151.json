@@ -1,0 +1,34 @@
+{
+  "layer": "gold",
+  "generated_at": "2026-05-18T16:21:51.443475+00:00",
+  "summary": {
+    "total_articles": 35,
+    "positive_articles": 21,
+    "negative_articles": 10,
+    "neutral_articles": 4,
+    "average_sentiment_score": 0.1307,
+    "market_sentiment": "bullish",
+    "top_sources": [
+      {
+        "source": "Yahoo Finance",
+        "count": 6
+      },
+      {
+        "source": "Zacks",
+        "count": 4
+      },
+      {
+        "source": "Investor's Business Daily",
+        "count": 4
+      },
+      {
+        "source": "24/7 Wall St.",
+        "count": 4
+      },
+      {
+        "source": "Proactive",
+        "count": 3
+      }
+    ]
+  }
+}
